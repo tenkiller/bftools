@@ -1,0 +1,69 @@
+.bf-grid {
+  font-size: 0.9em;
+}
+
+.bf-grid table {
+  margin-bottom: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.bf-grid-header {
+  border: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+.bf-grid-header table tr th {
+  border-bottom: 0 !important;
+  border-right: 1px solid #ddd;
+}
+
+.bf-grid-header-wrap {
+  padding-right: 17px;
+}
+
+.bf-grid-spinner {
+  width: 100%;
+}
+
+.bf-grid-body {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.bf-grid-body table tr:first-child td {
+  border-top: 0;
+}
+
+.bf-grid-body table td {
+  border-right: 1px solid #ddd;
+}
+
+.bf-grid-header th, .bf-grid-body td {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bf-grid-footer {
+  font-size: 0.9em;
+}
+
+.bf-grid-footer table {
+  border: 1px solid #ddd;
+  min-height: 30px;
+}
+
+.bf-grid-footer table td {
+  vertical-align: middle !important;
+}
+
+.bf-grid-footer .pagination {
+  cursor: pointer;
+  margin-top: 6px;
+  margin-bottom: 0;
+}

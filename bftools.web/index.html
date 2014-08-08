@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="bfTools">
+<head>
+  <title>bfTools v0.1</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="css/site.css" rel="stylesheet" />
+  <link href="css/grid.css" rel="stylesheet" />
+  <script src="js/angular.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>bfTools <span>v0.1</span></h1>
+  </header>
+  <div id="content">
+    <section ng-controller="homeController as vm">
+      <h3>{{vm.title}}</h3>
+      <div bf-grid bf-options="vm.grid"></div>
+    </section>
+  </div>
+  <footer>
+    <p>Coded by Brett Fincher (Tenkiller) &copy; 2014.</p>
+  </footer>
+
+  <script src="js/angular-cookies.min.js"></script>
+  <script src="js/angular-resource.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/angular-sanitize.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/common/dataService.js"></script>
+  <script src="app/delegate/directive.js"></script>
+  <script src="app/grid/directive.js"></script>
+  <script src="app/grid/controller.js"></script>
+  <script src="app/home/controller.js"></script>
+</body>
+</html>
