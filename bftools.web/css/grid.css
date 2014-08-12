@@ -3,9 +3,9 @@
 }
 
 .bf-grid table {
+  empty-cells: show;
   margin-bottom: 0;
   table-layout: fixed;
-  width: 100%;
 }
 
 .bf-grid-header {
@@ -30,7 +30,6 @@
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   overflow-y: scroll;
-  position: relative;
 }
 
 .bf-grid-body table tr:first-child td {

@@ -11,17 +11,18 @@
 
     // indicate that the grid is doing work
     vm.working = true;
-    // init grid paging
+
+    // init grid properties
     vm.pageable = options.pageable;
     vm.curPage = vm.numPages = 1;
     vm.pages = [];
-    // configure grid height
     vm.height = (angular.isNumber(options.height)) ? options.height + 'px' : 'auto';
-    // configure grid columns
-    vm.cols = configColumns(options.columns);
+    vm.cols = options.columns;
+
     // populate data into the grid
     vm.response = getData.call(vm, options.source, params);
 
+    // define grid behaviors
     vm.back = function (e) {
       e.stopPropagation();
       navigateBack.call(this, options.source, params);
@@ -35,20 +36,6 @@
     vm.goto = function (page) {
       navigateTo.call(this, options.source, params, page);
     };
-  }
-
-  function initColumnWidths(columns) {
-    var i, cols = columns;
-    for (i = 0; i < columns.length; i++) {
-      cols[i].width = (angular.isUndefined(columns[i].width)) ? 'auto' : columns[i].width + 'px';
-    }
-    return cols;
-  }
-
-  function configColumns(columns) {
-    var cols = initColumnWidths(columns);
-
-    return cols;
   }
 
   function getData(source, params) {
