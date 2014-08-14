@@ -37,8 +37,11 @@ Icon
 .Trashes
 
 # Visual Studio specific
+*.suo
+*.sln
+*.config
+*.csproj
+*.user
 /bin
 /obj
 /Properties
-/Web.Debug.config
-/Web.Release.config
