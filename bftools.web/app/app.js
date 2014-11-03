@@ -1,1 +1,0 @@
-﻿angular.module('bfTools', ['ngResource', 'ngRoute', 'ngSanitize']);

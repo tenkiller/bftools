@@ -1,5 +1,6 @@
-﻿(function (app) {
-  app.directive('bfDelegate', ['$parse', delegateDirective]);
+﻿(function () {
+  'use strict';
+  angular.module('bfTools').directive('bfDelegate', ['$parse', delegateDirective]);
 
   function delegateDirective($parse) {
     return {
@@ -54,4 +55,4 @@
       return getTargetNode(parent, child.parentNode, selector);
     }
   }
-})(angular.module('bfTools'));
+})();

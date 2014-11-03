@@ -1,5 +1,6 @@
-(function (app) {
-  app.controller('homeController', ['dataService', homeController]);
+(function () {
+  'use strict';
+  angular.module('bfTools').controller('homeController', ['dataService', homeController]);
 
   function homeController(dataService) {
     var vm = this;
@@ -26,4 +27,4 @@
       height: 200
     };
   }
-})(angular.module('bfTools'));
+})();

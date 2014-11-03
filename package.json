@@ -1,0 +1,23 @@
+{
+  "name": "bftools",
+  "version": "0.1.0",
+  "description": "A personal UI framework using AngularJS.",
+  "main": "/server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenkiller/bftools.git"
+  },
+  "author": "Brett Fincher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tenkiller/bftools/issues"
+  },
+  "homepage": "https://github.com/tenkiller/bftools",
+  "dependencies": {
+    "express": "^4.10.1",
+    "morgan": "^1.4.1"
+  }
+}

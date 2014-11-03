@@ -1,5 +1,6 @@
-﻿(function (app) {
-  app.controller('gridController', gridController);
+﻿(function () {
+  'use strict';
+  angular.module('bfTools').controller('gridController', gridController);
 
   function gridController($scope) {
     var vm = this, options, params;
@@ -89,4 +90,4 @@
     }
   }
 
-})(angular.module('bfTools'));
+})();

@@ -1,5 +1,6 @@
-(function (app) {
-  app.directive('bfGrid', gridDirective);
+(function () {
+  'use strict';
+  angular.module('bfTools').directive('bfGrid', gridDirective);
 
   function gridDirective() {
     return {
@@ -8,7 +9,7 @@
       scope: {
         options: '=bfOptions'
       },
-      templateUrl: '/app/grid/template.html',
+      templateUrl: 'app/grid/grid.template.html',
       controller: 'gridController',
       controllerAs: 'vm',
       link: link
@@ -37,4 +38,4 @@
       });
     }
   }
-})(angular.module('bfTools'));
+})();
