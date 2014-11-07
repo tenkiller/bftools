@@ -7,8 +7,6 @@
 
     // get the options for this grid from its isolated scope
     options = $scope.options;
-    // define the query string paramaters used for http get requests
-    params = { skip: 0, take: options.pageSize };
 
     // indicate that the grid is doing work
     vm.working = true;
@@ -19,6 +17,9 @@
     vm.pages = [];
     vm.height = (angular.isNumber(options.height)) ? options.height + 'px' : 'auto';
     vm.cols = options.columns;
+
+    // define the query string paramaters used for http get requests
+    params = (vm.pageable) ? { skip: 0, take: options.pageSize } : null;
 
     // populate data into the grid
     vm.response = getData.call(vm, options.source, params);
@@ -45,7 +46,7 @@
     self.working = true;
 
     return source.get(params, function (response, headers) {
-      self.numPages = Math.ceil(response.total / params.take);
+      self.numPages = (params) ? Math.ceil(response.total / params.take) : 1;
 
       if (self.pages.length !== self.numPages) {
         self.pages = [];
@@ -65,7 +66,10 @@
 
     if (self.curPage === 1) { return; }
 
-    params.skip = (--self.curPage - 1) * params.take;
+    if (params) {
+      params.skip = (--self.curPage - 1) * params.take;
+    }
+
     self.response = getData.call(self, source, params);
   }
 
@@ -74,7 +78,10 @@
 
     if (self.curPage + 1 > self.numPages) { return; }
 
-    params.skip = self.curPage++ * params.take;
+    if (params) {
+      params.skip = self.curPage++ * params.take;
+    }
+
     self.response = getData.call(self, source, params);
   }
 
@@ -85,7 +92,11 @@
 
     if (page > 0) {
       self.curPage = page;
-      params.skip = (self.curPage - 1) * params.take;
+
+      if (params) {
+        params.skip = (self.curPage - 1) * params.take;
+      }
+
       self.response = getData.call(self, source, params);
     }
   }

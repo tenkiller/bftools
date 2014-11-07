@@ -22,7 +22,7 @@
         { title: 'Value', field: 'value' },
         { title: 'Id', field: 'id', hidden: true }
       ],
-      pageable: true,
+      pageable: false,
       pageSize: 10,
       height: 200
     };

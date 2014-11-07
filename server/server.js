@@ -20,11 +20,18 @@ app.use('/vendor', express.static('../bower_components'));
 app.get('/api/comics', function (req, res) {
   var skip, take, data;
 
-  skip = parseInt(req.param('skip'));
-  take = parseInt(req.param('take')) + skip;
-  data = { data : comics.slice(skip, take), total: total };
+  skip = req.param('skip');
+  take = req.param('take');
 
-  res.status(200).json(data);
+  if (skip && take) {
+    skip = parseInt(skip);
+    take = parseInt(take) + skip;
+    data = comics.slice(skip, take);
+  } else {
+    data = comics;
+  }
+
+  res.status(200).json({ data : data, total: total });
 });
 
 app.listen(port, function () {
