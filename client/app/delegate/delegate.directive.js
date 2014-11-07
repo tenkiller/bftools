@@ -41,7 +41,7 @@
       }
 
       if (parent === child) {
-        // we traveresed all the way up to the parent node, so return
+        // we traversed all the way up to the parent node, so return
         // null since the selector does not exist as a child
         return null;
       }

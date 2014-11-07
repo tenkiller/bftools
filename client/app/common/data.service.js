@@ -1,8 +1,10 @@
 ﻿(function () {
   'use strict';
-  angular.module('bfTools').service('dataService', ['$resource', dataService]);
+  angular.module('bfTools').service('dataService', dataService);
+
+  dataService.$inject = ['$resource'];
 
   function dataService($resource) {
-    this.comics = $resource('comics.json');
+    this.comics = $resource('/api/comics');
   }
 })();
