@@ -6,17 +6,19 @@
     return {
       restrict: 'A',
       scope: {
-        selector: '='
+        options: '=bfDelegate'
       },
       link: link
     };
 
-    function link(scope, element, attributes) {
-      var selector = attributes.bfSelector,
-          expression = attributes.bfDelegate,
-          expressionHandler = $parse(expression);
+    function link(scope, element) {
+      var trigger, selector, action;
 
-      element.on('click', function (e) {
+      trigger = scope.options.trigger;
+      selector = scope.options.selector;
+      action = $parse(scope.options.action);
+
+      element.on(trigger, function (e) {
         var targetNode, targetScope;
 
         targetNode = getTargetNode(element[0], e.target, selector);
@@ -25,7 +27,7 @@
           targetScope = angular.element(targetNode).scope();
 
           targetScope.$apply(function () {
-            expressionHandler(targetScope);
+            action(targetScope);
           });
         }
       });

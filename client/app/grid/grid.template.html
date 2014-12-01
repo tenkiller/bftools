@@ -28,7 +28,7 @@
       <tfoot>
         <tr>
           <td ng-switch="vm.pageable">
-            <ul class="pagination" ng-switch-when="true" bf-delegate="vm.goto(page)" bf-selector="li">
+            <ul class="pagination" ng-switch-when="true" bf-delegate="{ trigger: 'click', selector: 'li', action: 'vm.goto(page)' }">
               <li ng-class="{ disabled: vm.curPage === 1 }"><a ng-click="vm.back($event)">&laquo;</a></li>
               <li ng-repeat="page in vm.pages" ng-class="{ active: vm.curPage === page }"><a>{{page}}</a></li>
               <li ng-class="{ disabled: vm.curPage === vm.numPages }"><a ng-click="vm.forward($event)">&raquo;</a></li>
