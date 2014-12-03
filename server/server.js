@@ -7,15 +7,16 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var logger = require('morgan');
+var root = __dirname;
 var port = process.env['PORT'] || 8080;
 
-var comics = JSON.parse(fs.readFileSync(__dirname + '/comics.json', 'utf8'));
+var comics = JSON.parse(fs.readFileSync(root + '/comics.json', 'utf8'));
 var total = comics.length;
 
 app.use(logger('dev'));
 
-app.use('/', express.static('../client'));
-app.use('/vendor', express.static('../bower_components'));
+app.use('/', express.static(root + '/../client'));
+app.use('/vendor', express.static(root + '/../bower_components'));
 
 app.get('/api/comics', function (req, res) {
   var skip, take, data;
@@ -37,4 +38,5 @@ app.get('/api/comics', function (req, res) {
 app.listen(port, function () {
   console.log('Express server listening on port ' + port);
   console.log('process.cwd = ' + process.cwd());
+  console.log('root = ' + root);
 });
