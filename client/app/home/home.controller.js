@@ -5,7 +5,16 @@
   function homeController(dataService) {
     var vm = this;
 
-    vm.title = 'bfGrid';
+    vm.nav = [
+      {
+        title: 'Character Sheets',
+        items: [
+          { title: 'Ezren', url: '/ezren' },
+          { title: 'Valeros', url: '/valeros' }
+        ]
+      },
+      { title: 'Quest Log', url: '/log' }
+    ];
 
     vm.grid = {
       source: dataService.comics,

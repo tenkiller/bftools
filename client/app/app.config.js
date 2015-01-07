@@ -1,8 +1,10 @@
-﻿(function () {
+(function () {
   'use strict';
   angular.module('bfTools').config(moduleConfig);
 
-  function moduleConfig() {
-
+  moduleConfig.$inject = ['$routeProvider', '$locationProvider'];
+  
+  function moduleConfig($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
   }
 })();
