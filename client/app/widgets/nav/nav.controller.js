@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('pacgc').controller('navigationController', navigationController);
+  angular.module('bfTools').controller('navigationController', navigationController);
   
   navigationController.$inject = ['$scope', '$location'];
 

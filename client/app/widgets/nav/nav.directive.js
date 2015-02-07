@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('pacgc').directive('bfNav', navigationDirective);
+  angular.module('bfTools').directive('bfNav', navigationDirective);
 
   function navigationDirective() {
     return {
