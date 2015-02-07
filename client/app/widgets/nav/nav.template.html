@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li ng-repeat="element in nav" ng-class="{ dropdown: element.items }">
+      <li ng-repeat="element in vm.nav" ng-class="{ dropdown: element.items, active: vm.isActive(element.url) }">
         <a ng-href="{{element.url || '#'}}"
            ng-class="{ 'dropdown-toggle': element.items }"
            ng-attr-data-toggle="{{ element.items && 'dropdown' }}">{{element.title}}&nbsp;<span ng-if="element.items" class="caret"></span></a>
